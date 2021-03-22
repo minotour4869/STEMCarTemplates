@@ -4,6 +4,7 @@
 int initial_speed = 225;
 
 Kmotor _motor(1);
+uint8_t sens[] = {A4, A6, A7, A5};
 int ml = 0, mr = 4;
 float avg[] = {900, 900, 900, 900}; // adjust this array for calibrate line sensor, you can use Serial Monitor to read the value and adjust it
 bool state[5];
