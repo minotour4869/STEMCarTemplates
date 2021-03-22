@@ -21,29 +21,44 @@ void Kmotor::engine(int cnt, int spd)
     analogWrite(manl[cnt], abs(spd));
 }
 
-void Kmotor::run(int mode, int spd)
+void Kmotor::run(char mode, int spd)
 {
     switch(mode)
     {
-        case 0: // fwd
+        case 'F': // fwd
             Kmotor::engine(0, spd);
             Kmotor::engine(1, spd);
             break;
-        case 1: //bwd
+        case 'B': //bwd
             Kmotor::engine(0, -spd);
             Kmotor::engine(1, -spd);
             break;
-        case 2: //turn left
+        case 'L': //turn left
             Kmotor::engine(0, -spd);
             Kmotor::engine(1, spd);
             break;
-        case 3: // turn right
+        case 'R': // turn right
             Kmotor::engine(0, spd);
             Kmotor::engine(1, -spd);
+            break;
+        case 'C': // fwd-left
+            Kmotor::engine(0, 0);
+            Kmotor::engine(1, spd);
+            break;
+        case 'M': // fwd-right
+            Kmotor::engine(0, spd);
+            Kmotor::engine(1, 0);
+            break;
+        case 'E': // bwd-left
+            Kmotor::engine(0, 0);
+            Kmotor::engine(1, -spd);
+            break;
+        case 'P': // fwd-right
+            Kmotor::engine(0, -spd);
+            Kmotor::engine(1, 0);
+            break;
+        case 'S':
+            Kmotor::engine(0, 0);
+            Kmotor::engine(1, 0);
     }
-}
-
-void Kmotor::stop()
-{
-    Kmotor::run(0, 0);
 }

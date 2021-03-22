@@ -7,7 +7,7 @@ class Kmotor
         Kmotor(bool msg);
         void init();
         void engine(int cnt, int spd);
-        void run(int mode, int spd);
+        void run(char mode, int spd);
         void stop();
     private:
         bool _msg;

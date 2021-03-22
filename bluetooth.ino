@@ -29,21 +29,5 @@ void loop()
         For more infomation, download Robo Control app from Kidscode (Android only)
     */
     if (state) Serial.println(state);
-    switch (state)
-    {
-        case 'F':
-            _motor.run(0, 255);
-            break;
-        case 'B':
-            _motor.run(1, 200);
-            break;
-        case 'C': case 'L':
-            _motor.run(2, 200);
-            break;
-        case 'M': case 'R':
-            _motor.run(3, 200);
-            break;
-        case 'S':
-            _motor.stop();
-    }
+    _motor.run(state, 200);
 }
