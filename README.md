@@ -6,4 +6,4 @@ Một số templates và những nhu yếu phẩm (?) cần thiết cho xe tự 
 
 Chúc các bạn thành công! <3
 
-SPOILER: CODE LOI
+[SPOILER] CODE LOI
